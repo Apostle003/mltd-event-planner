@@ -36,3 +36,4 @@ out/
 
 # Environment
 application.properties
+local.properties
