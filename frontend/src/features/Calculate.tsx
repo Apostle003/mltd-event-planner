@@ -495,17 +495,21 @@ export default function Calculate() {
 }
 
 export type TimeParts = {
+  sign: string
   h: number
   m: number
   s: number
 }
 
 export function toTimeParts(seconds: number): TimeParts {
-  const h = Math.floor(seconds / 3600)
-  const m = Math.floor((seconds %   3600) / 60)
-  const s = seconds % 60
+  const sign = seconds < 0 ? "-" : ""
+  const abs = Math.abs(seconds)
 
-  return {h, m, s}
+  const h = Math.floor(abs / 3600)
+  const m = Math.floor((abs %   3600) / 60)
+  const s = abs % 60
+
+  return {sign, h, m, s}
 }
 
 export function toSeconds(

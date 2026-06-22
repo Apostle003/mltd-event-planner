@@ -24,7 +24,9 @@ class OptimalPlayCountsCalculator() {
 
         val maxSpendPlayCount =
             (remainingDuration /
-                    parameters.spendDurationPerPlay).toInt()
+                    parameters.spendDurationPerPlay)
+                .toInt()
+                .coerceAtLeast(0)
 
         var bestScore = Int.MAX_VALUE
         var bestPlayCounts = OptimalPlayCounts(0, 0)

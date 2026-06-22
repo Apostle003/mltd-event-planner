@@ -10,6 +10,6 @@ localhost:443 {
 
     # React
     handle {
-        reverse_proxy react:5173
+        reverse_proxy react:{$REACT_PORT}
     }
 }
