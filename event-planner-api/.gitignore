@@ -35,4 +35,5 @@ out/
 .kotlin
 
 # Environment
+application-dev.properties
 local.properties
